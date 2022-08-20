@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Tower Tide Gauge Portal</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="index.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCAod1NL-93chXYK_hmcn49HLBBpI_udsA&callback=initMap&v=weekly"
+        defer></script>
+</head>
+
+<body id="mainBody">
+    <div class="topnav" id="myTopnav">
+        <a href="http://www.TowerTideGauge.com"><img id="logo" src="Tower.png"></a>
+        <div class="dropdown">
+            <button class="dropbtn">Tide Gauges
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div id="dropdown" class="dropdown-content">
+            </div>
+        </div>
+        <div class="dropdown">
+            <form method="get" action="updates/tidegaugeupdate.zip">
+            <button class="dropbtn" >Firmware</button>
+             </form>
+        </div>
+    </div>
+    <div class="map" id="map"></div>
+
+</body>
+
+</html>

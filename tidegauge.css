@@ -1,0 +1,120 @@
+@media screen and (min-width: 721px) {
+
+  html,
+  body {
+    background-color: #333;
+    margin: auto;
+    max-width: 1024px;
+    min-width: 320px;
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 720px) {
+
+  html,
+  body {
+    background-color: #333;
+    margin: auto;
+    max-width: 720px;
+    min-width: 320px;
+    font-size: 12px;
+  }
+
+}
+
+.Readings,
+.map {
+  background-color: aliceblue;
+  border-radius: 10px;
+  padding: 10px;
+  display: block;
+  text-align: center;
+  min-width: 360px;
+}
+
+.map {
+  height: 125px;
+}
+
+.header {
+  background-image: url("ocean.jpg");
+  background-size: 100% 100%;
+  color: darkblue;
+  font-size: 32px;
+  cursor: pointer;
+  display: block;
+  border-radius: 10px;
+  min-width: 360px;
+  padding: 10px;
+  font-weight: bold;
+
+}
+
+.header-left {
+  margin: auto;
+  padding: 10px;
+  display: inline-flex;
+}
+
+.header-right {
+  margin: auto;
+  padding: 20px 10px;
+  display: block;
+  float: right;
+}
+
+#CurrentLocation {
+  margin: auto;
+  padding: 10px;
+  display: inline;
+  font-size: 32px;
+  text-align: center;
+}
+
+
+#CurrentTideTime {
+  font-size: 32px;
+}
+
+#CurrentTideValue {
+  font-size: 64px;
+}
+
+
+
+
+
+.TideTable {
+  border: 1px solid rgb(45, 45, 45);
+  background-color: lightsteelblue;
+  border-radius: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin: auto;
+  display: Block;
+}
+
+.TideReading {
+  border: 1px solid rgb(45, 45, 45);
+  background-color: whitesmoke;
+  margin: auto;
+  display: inline-block;
+  width: 100%;
+}
+
+#TideReadingData {
+  border: 1px solid rgb(45, 45, 45);
+  background-color: whitesmoke;
+  padding: 2px;
+  margin: auto;
+  display: inline-block;
+  width: 23%;
+}
+
+
+
+.TideChart {
+  margin: 0;
+  height: 100%;
+}

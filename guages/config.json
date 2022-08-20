@@ -1,0 +1,23 @@
+{
+    "WiFi_SSID": "Tower_Hub",
+    "WiFi_Password": "TowerAdmin78",
+    "CurrentTideValue": 4.369999886,
+    "CurrentTideTime": "14/07/22,16:50:40",
+    "CurrentTideString": "55,14/07/22,16:50,4.370",
+    "LastReadTime": 1657810240,
+    "NumberOfTideReadings": 0,
+    "Latitude": -19.82533052450342,
+    "Longitude": 34.832532095888915,
+    "Sensor_Location": "Biera",
+    "Sensor_TimeZone": 9,
+    "Sensor_Type": 2,
+    "Sensor_Offset": 0,
+    "Sensor_M_F": 0,
+    "Sensor_AveragingReadTime": 10,
+    "Sensor_MeasurementInterval": 300,
+    "Radio_OperationMode": 1,
+    "Radio_Activated": false,
+    "WebInterface": true,
+    "WebUpload": true
+
+}
