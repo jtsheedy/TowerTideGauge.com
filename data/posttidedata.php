@@ -1,25 +1,24 @@
 <?php
-$Date = date("d/m/Y");
-$Time = date("H:i:s");
-$Serial = $_POST["Serial"];
-$Location = $_POST["Location"];
-$Latitude = number_format($_POST["Latitude"], 7);
-$Longitude = number_format($_POST["Longitude"], 7);
-$DateTime = $_POST["DateTime"];
-$Value = $_POST["Value"];
-$Units = $_POST["Units"];
+require "db_connect.php";
+$data = $_POST["_currenttidestring"];
 
-require "../includes/db_connect.php";
+$stationInfo = explode(",", $data);
+$_serial = $stationInfo[1];
+$_country = $stationInfo[2];
+$_loc = $stationInfo[3];
+$_lat = $stationInfo[4];
+$_lon = $stationInfo[5];
+$_date = $stationInfo[6];
+$_time = $stationInfo[7];
+$_tide = $stationInfo[8];
+$_units = $stationInfo[9];
 
-$sql = "INSERT INTO TideGauges (_serial, _tide,  _units, _lat, _lon, _loc)
-VALUES ('$Serial', '$Value', '$Units','$Latitude', '$Longitude', '$Location')";
+$sql = "INSERT INTO TideGauges (_serial,_country,_loc,_lat,_lon,_date,_time,_tide,_units)
+VALUES ('$_serial','$_country','$_loc','$_lat','$_lon','$_date','$_time','$_tide','$_units')";
 
 if ($mysqli->query($sql) === TRUE) {
-    //echo "New record created successfully";
+    echo "OK";
 } else {
     echo "Error: " . $sql . " " . $mysqli->error;
 }
-
 $mysqli->close();
-
-?>

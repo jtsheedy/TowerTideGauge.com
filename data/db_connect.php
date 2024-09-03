@@ -1,6 +1,6 @@
 <?php
 $servername = "localhost";
-$username = "xyj0hinzxop8";//"towertide"//"root";//
+$username = "TWR001";//"towertide"//"root";//
 $password = "R3b3cc@2010";//"TowerAdmin78"//"";//
 $dbName = "Tower_Tide_Gauge";
 $mysqli = new mysqli($servername, $username, $password, $dbName);

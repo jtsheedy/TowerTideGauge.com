@@ -25,12 +25,11 @@
           color: white;
           text-decoration: none;
           font-size: 20px;
-          padding: 5px ;
+          padding: 5px;
           display: block;
         }
 
         #siteContent {
-          min-width: 175px;
           background-image: linear-gradient(rgb(125, 125, 255), aliceblue);
           text-decoration: none;
           font-size: 14px;
@@ -41,14 +40,14 @@
           font-weight: bold;
           border: 1px solid black;
           border-radius: 5px;
-
+          padding: 5px;
         }
 
         #logo {
           display: block;
           background-color: whitesmoke;
           height: 25px;
-          padding: 5px;
+
         }
 
         .topnav {

@@ -6,31 +6,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0" />
     <title>Tide Data</title>
     <link rel="stylesheet" href="tidegauge.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide">    <script src="tidegauge.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
-
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
-    <script
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCAod1NL-93chXYK_hmcn49HLBBpI_udsA&callback=initMap&v=weekly"
-        defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="tidegauge.js"></script>
 </head>
 
 <body id="mainBody">
     <div class="header">
         <div class="header-left">
-            <label class="CurrentLocation" id="CurrentLocation"></label>
+            <label onclick="BuildTextFile()" class="CurrentLocation" id="CurrentLocation"></label>
         </div>
         <div class="header-right">
             <a href="http://www.towertidegauge.com/"><img src="Tower.png" height=35></a>
         </div>
     </div>
+    <!--
     <div class="map" id="map"></div>
-    <div class="Readings" id="Readings">
-        <div id="CurrentTideTime"></div><br>
+   -->
+    <span class="Readings" id="Readings">
+        <div id="CurrentTideTime"></div>
         <div id="CurrentTideValue"></div>
+        <a class="history" id="tidehistory" onclick="ShowHistory()">History ▼</a>
         <canvas class="TideChart" id="TideChart"></canvas>
-        <div class="TideTable" id="TideTable"></div>
-    </div>
+        <span id="TideTable"></span>
+    </span>
+    <span class="Readings" id="Predictions">
+        <a class="history" id="PredictionsTable" onclick="ShowPrediction()">Predictions ▼</a>
+        <canvas class="TideChart" id="PredictedTideChart"></canvas>
+        <span id="TidePrediction"></span>
+    </span>
 </body>
-
 </html>

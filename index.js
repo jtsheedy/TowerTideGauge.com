@@ -1,5 +1,6 @@
 let map;
 let locations = [];
+
 document.addEventListener('DOMContentLoaded', function () {
   getTideGauges();
 });
@@ -13,7 +14,8 @@ function initMap() {
     disableDefaultUI: true,
   }
   let map = new google.maps.Map(document.getElementById("map"), mapOptions);
-  let tgLocations = [];
+  google.maps.importLibrary("maps");
+  google.maps.importLibrary("marker");
   for (let i = 0; i < locations.length; i++) {
     const data = locations[i];
     let siteLink =
@@ -26,20 +28,15 @@ function initMap() {
       "</a>";
 
     dropdown = dropdown.concat(siteLink)
-    //https://docs.stormglass.io/
-    let myLatlng = new google.maps.LatLng(parseFloat(data._lat), parseFloat(data._lon));
-    let dt = data._time.split(" ");
+
     const link = '<div id="siteLink" onclick=window.location.href="tidegauge.html?_serial=' + data._serial + '">' + data._loc.toUpperCase() + '</div>'
-    console.log(link);
     const contentString =
       '<head><link rel="stylesheet" href="index.css"/>' +
       '<body>' +
       '<div id="siteContent">' +
-      link +      
-      '<div>' + data._serial + '</div>' +
-      '<div>' + dt[0] + '</div>' +
-      '<div>' + dt[1] + '</div>' +
+      link +
       '<div>' + data._tide + data._units + '</div>' +
+      '<div>' + data._date + '</div>' +
       '</div>' +
       '</body></head>';
 
@@ -70,7 +67,7 @@ function initMap() {
 
 function getTideGauges() {
   const ajax = new XMLHttpRequest();
-  ajax.open("GET", "/data/getdata.php", true);
+  ajax.open("GET", "/data/getstations.php", true);
   ajax.send();
 
   ajax.onreadystatechange = function () {
@@ -89,5 +86,4 @@ function getTideGauges() {
       initMap();
     }
   };
-
 }
