@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Tower Tide Gauge</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="index.css">
+    <script src="index.js"></script>
+    <script src="update.js"></script>
+    <script src="Chart.min.js"></script>
+    /
+</head>
+
+<body id="mainBody">
+    <div class="header">
+        <a id="navMenu" onclick="OpenNavMenu()">&#9776;</a>
+        <a id="CurrentLocation"></a>
+        <a id="logo" href="http://www.towertidegauge.com/"><img src="Tower.png" height=35></a>
+    </div>
+    <div class="col-12 footer" id="info">
+        <a class="col-4" href="http://towertidegauge.local">TowerTideGauge.local</a>
+        <a class="col-4" id="localIP"></a>
+        <a class="col-4" id="clientIP"></a>
+    </div>
+
+    <div class="col-12 container" id="SettingsContainer">
+        <a class="col-12 settingsheader">Save Settings</a>
+        <button class="col-6" id="SaveSettings" onclick="SaveSettings()">&#10004;</button>
+        <button class="col-6 " id="CancelSettings" onclick="OpenSettings()">&#10008;</button>
+
+        <!--==============================================================-->
+        <span class="col-12 container">
+            <a class="col-12 settingsheader">Sensor Settings</a>
+            <a class="col-6">Country</a>
+            <input class="col-6" id="Sensor_Country" type="text" size="3">
+            <a class="col-6">Location</a>
+            <input class="col-6" id="Sensor_Location" type="text">
+            <a class="col-6">Latitude</a>
+            <input class="col-6" id="Sensor_Latitude" type="text" size="10">
+            <a class="col-6">Longitude</a>
+            <input class="col-6" id="Sensor_Longitude" type="text" size="10">
+            <a class="col-6">Time Zone</a>
+            <select class="col-6" id="Sensor_TimeZone">
+                <option value="0">+0</option>
+                <option value="1">+1</option>
+                <option value="2">+2</option>
+                <option value="3">+3</option>
+                <option value="4">+4</option>
+                <option value="5">+5</option>
+                <option value="6">+6</option>
+                <option value="7">+7</option>
+                <option value="8">+8</option>
+                <option value="9">+9</option>
+                <option value="10">+10</option>
+                <option value="11">+11</option>
+                <option value="12">+12</option>
+                <option value="13">+13</option>
+                <option value="14">+14</option>
+                <option value="15">+15</option>
+                <option value="16">+16</option>
+                <option value="17">+17</option>
+                <option value="18">+18</option>
+                <option value="19">+19</option>
+                <option value="20">+20</option>
+                <option value="21">+21</option>
+                <option value="22">+22</option>
+                <option value="23">+23</option>
+                <option value="-23">-23</option>
+                <option value="-22">-22</option>
+                <option value="-21">-21</option>
+                <option value="-20">-20</option>
+                <option value="-19">-19</option>
+                <option value="-18">-18</option>
+                <option value="-17">-17</option>
+                <option value="-16">-16</option>
+                <option value="-15">-15</option>
+                <option value="-14">-14</option>
+                <option value="-13">-13</option>
+                <option value="-12">-12</option>
+                <option value="-11">-11</option>
+                <option value="-10">-10</option>
+                <option value="-9">-9</option>
+                <option value="-8">-8</option>
+                <option value="-7">-7</option>
+                <option value="-6">-6</option>
+                <option value="-5">-5</option>
+                <option value="-4">-4</option>
+                <option value="-3">-3</option>
+                <option value="-2">-2</option>
+                <option value="-1">-1</option>
+            </select>
+            <a class="col-6">Type</a>
+            <select class="col-6" id="Sensor_Type">
+                <option value="0">Pressure</option>
+                <option value="1">Radar</option>
+            </select>
+            <a class="col-6">Height</a>
+            <input class="col-6" id="Sensor_Offset" type="number" size="7" max="100" min="-100" step="0.01">
+            <a class="col-6">Units</a>
+            <select class="col-6" id="Sensor_M_F">
+                <option value="0" onclick="ToggleMeasurementUnits();">Meters</option>
+                <option value="1" onclick="ToggleMeasurementUnits();">Feet</option>
+            </select>
+            <a class="col-6">Interval</a>
+            <select class="col-6" id="Sensor_MeasurementInterval">
+                <option value="60">1 min</option>
+                <option value="300">5 min</option>
+                <option value="600">10 min</option>
+                <option value="900">15 min</option>
+                <option value="1800">30 min</option>
+                <option value="3600">60 min</option>
+            </select>
+        </span>
+        <span class="col-12 container">
+            <!--==============================================================-->
+            <a class="col-12 settingsheader">WiFi Settings</a>
+            <a class="col-6">SSID</a>
+            <input class="col-6" id="WiFi_STA_SSID" type="text" class="input-box">
+            <a class="col-6">Password</a>
+            <input class="col-6" id="WiFi_STA_Password" type="password">
+            <a class="col-6">TCP Port</a>
+            <input class="col-6" type="number" max=65535 min=1 id="WiFi_tcpPort" placeholder="10232">
+            <a class="col-6">UDP Port</a>
+            <input class="col-6" type="number" max=65535 min=1 id="WiFi_udpPort" placeholder="8881">
+
+            <a class="col-6">Search for WiFi</a>
+            <button class="col-6" onclick="ScanNetworks()">&#x1f4f6;</button>
+            <a class="col-12 settingsheader">FTP Settings</a>
+            <a class="col-6">FTP Address</a>
+            <input class="col-6" id="FTP_Server" type="text" class="input-box">
+            <a class="col-6">Username</a> <input class="col-6" id="FTP_User" type="text" class="input-box">
+            <a class="col-6">Password</a> <input class="col-6" id="FTP_Pass" type="password">
+
+        </span>
+        <span class="col-12 container">
+            <button class="col-6" value="Download" onclick="DownloadFile('ExportedTides.csv', TideHistory)">Download
+                File</button>
+            <button class="col-6" value="Clear" onclick="DeleteTideHistory()">Clear History</button>
+        </span>
+        <span class="col-12 container">
+            <button class="col-6" id="reboot" onclick="RestartESP();">Reboot</button>
+            <button class="col-6" id="firmware" onclick="UpdateESP();">Firmware</button>
+        </span>
+    </div>
+    <!--Readings==============================================================-->
+    <div class="container">
+        <a class="col-12" id="CurrentTideTime"></a><br>
+        <a class="col-12" id="CurrentTideValue">
+            <a class="col-12" id="CurrentTideUnits"></a>
+        </a>
+        <canvas class="TideChart" id="TideChart"></canvas>
+        <a class="history" id="tidehistory" onclick="ShowHistory()">History &#x2193</a>
+        <div id="TideTable"></div>
+    </div>
+    <!--Password====================================================================-->
+    <div class="PasswordForm" id="PasswordForm">
+        <div class="PasswordForm-content">
+            <a class="ClosePassword" onclick="CloseNavMenu()">&times;</a>
+            <h1>Enter Password</h1>
+            <input id="Password" name=pwd placeholder=Password type=Password>
+            <input id="Submit" type=submit onclick=AdminCheck(this.form) value=Login></form>
+        </div>
+    </div>
+    <!--Modal====================================================================-->
+    <div class="modal" id="ScanNetworkModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="Close" onclick="CloseModal();">&times;</span>
+                <span onclick="RefreshNetworklist();">&#x21bb;</span>
+                <b>Please select a network.</b>
+            </div>
+            <div class="modal-body">
+                <div id="FoundNetworks"></div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

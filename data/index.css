@@ -1,0 +1,518 @@
+@media screen and (min-width: 501px) {
+    body {
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    body {
+        font-size: 12px;
+    }
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+[class*="col-"] {
+    float: left;
+    padding: 0px;
+}
+
+.col-1 {
+    width: 8.33%;
+}
+
+.col-2 {
+    width: 16.66%;
+}
+
+.col-3 {
+    width: 25%;
+}
+
+.col-4 {
+    width: 33.33%;
+}
+
+.col-5 {
+    width: 41.66%;
+}
+
+.col-6 {
+    width: 50%;
+}
+
+.col-7 {
+    width: 58.33%;
+}
+
+.col-8 {
+    width: 66.66%;
+}
+
+.col-9 {
+    width: 75%;
+}
+
+.col-10 {
+    width: 83.33%;
+}
+
+.col-11 {
+    width: 91.66%;
+}
+
+.col-12 {
+    width: 100%;
+}
+
+html,
+body {
+    font-family: Helvetica;
+    background-color: black;
+    margin: auto;
+    max-width: 660px;
+    min-width: 320px;
+}
+
+.PasswordForm h1 {
+    color: aliceblue;
+}
+
+#tidehistory {
+    font-weight: bold;
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid black;
+    margin: auto;
+}
+
+input,
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    border-radius: 5px;
+    border: 1px solid black;
+    margin: auto;
+    appearance: none;
+    text-align: center;
+    text-align-last: center;
+    padding: 5px 0px;
+    background-color: aliceblue;
+    font-size: 20px;
+}
+
+Label {
+    font-size: 20px;
+    color: darkblue;
+    margin: auto;
+    padding: 1px;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+}
+
+button {
+    background-color: rgb(0, 0, 155);
+    border: 1px solid rgb(45, 45, 45);
+    border-radius: 10px;
+    display: inline-block;
+    color: aliceblue;
+    font-size: 24px;
+    text-decoration: none;
+    width: 150px;
+    margin: auto;
+    padding: 30px 10px;
+    text-align: center;
+}
+
+.header {
+    background-image: url("ocean.jpg");
+    background-size: 100% 100%;
+    color: darkblue;
+    font-size: 32px;
+    display: block;
+    border-radius: 10px;
+    min-width: 360px;
+    padding: 10px;
+    font-weight: bold;
+    width: 100%;
+
+}
+
+#logo {
+    float: right;
+}
+
+.header-left {
+    margin: auto;
+    padding: 10px;
+    display: inline-flex;
+}
+
+.header-right {
+    margin: auto;
+    padding: 20px 10px;
+    display: block;
+    float: right;
+}
+
+.footer {
+    border: 1px solid rgb(45, 45, 45);
+    background-color: #555;
+    border: 1px solid black;
+    border-radius: 10px;
+    font-size: 10px;
+    color: bisque;
+    text-align: center;
+    font-weight: lighter;
+    width: 100%;
+    margin: auto;
+
+}
+
+.history {
+    background-color: lightgray;
+    color: black;
+    font-size: 16px;
+    display: block;
+    border-radius: 10px;
+    padding: 10px;
+    font-weight: bold;
+    width: 100%;
+
+}
+
+#info a,
+a:visited,
+a:hover,
+a:active {
+    color: inherit;
+}
+
+#CurrentLocation {
+    margin: auto;
+    padding: 10px;
+    display: inline;
+    font-size: 32px;
+}
+
+#CurrentTideTime {
+    font-size: 32px;
+}
+
+#CurrentTideValue {
+    font-size: 64px;
+}
+
+#CurrentTideUnits {
+    font-size: 32px;
+}
+
+.ScanWireless {
+    margin: auto;
+}
+
+.container {
+    background-color: lightsteelblue;
+    border: 1px solid rgb(45, 45, 45);
+    border-radius: 10px;
+    padding: 5px;
+    display: block;
+    text-align: center;
+    width: 100%;
+}
+
+.Sensor,
+.WiFi {
+    background-color: aliceblue;
+    border: px solid rgb(45, 45, 45);
+    border-radius: 10px;
+    padding: 10px 10px;
+    margin: auto;
+    display: block;
+    text-align: center;
+}
+
+.TideChart {
+    border: 1px solid rgb(45, 45, 45);
+    border-radius: 10px;
+    padding: 5px;
+    margin: auto;
+    height: 80%;
+    width: 50%;
+}
+
+.TideTable {
+    border: 1px solid rgb(45, 45, 45);
+    background-color: lightsteelblue;
+    border-radius: 10px;
+    padding: 0px, 10px;
+    margin: auto;
+    display: none;
+}
+
+.TideReading {
+    border: 1px solid rgb(45, 45, 45);
+    background-color: whitesmoke;
+    margin: auto;
+    display: inline-block;
+    width: 100%;
+}
+
+#TideReadingData {
+    border: 1px solid rgb(45, 45, 45);
+    background-color: whitesmoke;
+    padding: 2px;
+    margin: auto;
+    display: inline-block;
+    width: 33%;
+}
+
+.Setting {
+    border: 1px solid rgb(45, 45, 45);
+    margin: auto;
+    padding: 2px;
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+}
+
+.settingsheader {
+    background-color: lightslategray;
+    color: black;
+    padding: 5px;
+    text-align: center;
+    border-radius: 5px;
+
+}
+
+.SaveButton {
+    border: 1px solid rgb(45, 45, 45);
+    text-align: center;
+    background-color: aliceblue;
+    display: inline;
+    margin: auto;
+    position: fixed;
+    bottom: 0;
+    max-width: 660px;
+}
+
+#SaveSettings {
+    background-color: lightgreen;
+    border: 1px solid rgb(45, 45, 45);
+    display: inline;
+    margin: auto;
+    color: black;
+    height: 50px;
+}
+
+#CancelSettings {
+    background-color: lightcoral;
+    border: 1px solid rgb(45, 45, 45);
+    color: black;
+    display: inline;
+    margin: auto;
+    height: 50px;
+
+}
+
+.canvas {
+    background-color: white;
+    position: relative;
+}
+
+.button,
+.WiFiLogo {
+    background-color: rgb(0, 0, 155);
+    border: 1px solid rgb(45, 45, 45);
+    border-radius: 10px;
+    display: block;
+    color: aliceblue;
+    font-size: 24px;
+    text-decoration: none;
+    width: 150px;
+    margin: auto;
+    padding: 10px 20px;
+    text-align: center;
+}
+
+#dth {
+    width: 90vw;
+    margin-bottom: 10px;
+}
+
+
+/* The Modal (background) */
+
+.modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    padding-top: 25px;
+    /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
+}
+
+
+/* Modal Content */
+
+.modal-content {
+    background-color: gray;
+    border-radius: 10px;
+    margin: auto;
+    padding: 0;
+    border: 1px solid white;
+    width: 100%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s;
+    max-width: 600px;
+    overflow: auto;
+    text-align: center;
+}
+
+.Close,
+.RefreshNetworks {
+    color: white;
+    float: right;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.ScanNetworkModal {
+    max-width: 300px;
+    min-width: 240px;
+}
+
+#SettingsContainer {
+    border: 2px solid black;
+    margin: auto;
+    display: none;
+}
+
+.modal-header {
+    padding: 2px;
+    background-color: silver;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    color: white;
+}
+
+.modal-body {
+    padding: 2px 2px;
+}
+
+.CreatedNetworkElement {
+    padding: 5px;
+    margin: 2px;
+    border-color: black;
+    border-width: 2px;
+    border-style: solid;
+    background-color: lightskyblue;
+    border-radius: 10px;
+    color: Black;
+}
+
+.UpdateSource {
+    border: black;
+    border-radius: 10px;
+    border-width: 1px;
+    border-style: solid;
+    padding: 10px 32px;
+    text-decoration: none;
+    display: block;
+    font-size: 16px;
+    width: auto;
+    margin: auto;
+    padding: 10px;
+}
+
+.UpdateButton,
+.UpdateFileButton {
+    background-color: rgb(0, 0, 155);
+    border-radius: 10px;
+    border: black;
+    color: white;
+    display: inline-block;
+    font-size: 16px;
+    width: 100px;
+    margin: auto;
+    padding: 10px;
+}
+
+.PasswordForm {
+    height: 0%;
+    width: 0%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: black;
+    background-color: rgba(0, 0, 0, 0.9);
+    overflow-x: hidden;
+    transition: 0.5s;
+    text-align: center;
+}
+
+.PasswordForm-content {
+    position: relative;
+    margin: auto;
+    max-width: 500px;
+}
+
+.PasswordForm input {
+    background-color: lightblue;
+    font-size: 32px;
+    color: darkgray;
+    margin: auto;
+    padding: 20px;
+    text-decoration: none;
+    display: block;
+    transition: 0.3s;
+    width: 80%;
+    border-radius: 20px;
+    border: 1px solid black;
+}
+
+#Submit {
+    background-color: darkblue;
+    color: aliceblue;
+    border: 1px solid aliceblue;
+}
+
+.ClosePassword {
+    color: lightcoral;
+    position: absolute;
+    top: 5px;
+    right: 5%;
+    font-size: 60px;
+}
+
+#ResetTideGauge {
+    width: 100%;
+    background-color: cornflowerblue;
+}

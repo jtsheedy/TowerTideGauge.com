@@ -1,0 +1,20 @@
+{
+    "Sensor_Latitude": 57.121931,
+    "Sensor_Longitude": 8.602198,
+    "Sensor_Country": "DEN",
+    "Sensor_Location": "Hanstholm",
+    "Sensor_TimeZone": 1,
+    "Sensor_Offset": 4.3,
+    "Sensor_M_F": 0,
+    "Sensor_Type": 1,
+    "Sensor_MeasurementInterval": 600,
+    "WiFi_STA_SSID": "Castle Sheedy",
+    "WiFi_STA_Password": "KylaBailey2017",
+    "WiFi_AP_Password": "TowerAdmin78",
+    "WiFi_tcpPort": 10232,
+    "WiFi_udpPort": 8881,
+    "Output_Baud": 115200,
+    "FTP_Server": "92.205.4.191",
+    "FTP_User": "2188@towertidegauge.com",
+    "FTP_Pass": "TowerAdmin78"
+}
